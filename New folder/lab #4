@@ -1,0 +1,16 @@
+<?php
+fwrite(STDOUT, "Enter a number: ");
+$input = trim(fgets(STDIN));
+$number = is_numeric($input) ? (int) $input : null;
+
+if ($number === null) {
+    echo "Please enter a valid number.\n";
+    exit(1);
+}
+
+if ($number % 2 == 0) {
+    echo "$number is Even\n";
+} else {
+    echo "$number is Odd\n";
+}
+?>
