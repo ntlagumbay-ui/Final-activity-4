@@ -1,0 +1,27 @@
+<?php
+fwrite(STDOUT, "Enter first number: ");
+$num1Input = trim(fgets(STDIN));
+
+fwrite(STDOUT, "Enter second number: ");
+$num2Input = trim(fgets(STDIN));
+
+fwrite(STDOUT, "Enter third number: ");
+$num3Input = trim(fgets(STDIN));
+
+$num1 = is_numeric($num1Input) ? (float) $num1Input : null;
+$num2 = is_numeric($num2Input) ? (float) $num2Input : null;
+$num3 = is_numeric($num3Input) ? (float) $num3Input : null;
+
+if ($num1 === null || $num2 === null || $num3 === null) {
+    echo "Please enter valid numbers for all three values.\n";
+    exit(1);
+}
+
+if ($num1 >= $num2 && $num1 >= $num3) {
+    echo "Largest number is: $num1\n";
+} elseif ($num2 >= $num1 && $num2 >= $num3) {
+    echo "Largest number is: $num2\n";
+} else {
+    echo "Largest number is: $num3\n";
+}
+?>
