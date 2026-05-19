@@ -1,0 +1,13 @@
+<?php
+fwrite(STDOUT, "Enter username: ");
+$username = trim(fgets(STDIN));
+
+fwrite(STDOUT, "Enter password: ");
+$password = trim(fgets(STDIN));
+
+if ($username === "admin" && $password === "1234") {
+    echo "Login Successful!\n";
+} else {
+    echo "Invalid credentials!\n";
+}
+?>
