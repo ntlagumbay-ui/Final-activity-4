@@ -1,0 +1,21 @@
+<?php
+fwrite(STDOUT, "Enter traffic light color (red, yellow, green): ");
+$color = trim(strtolower(fgets(STDIN)));
+
+if (!in_array($color, ['red', 'yellow', 'green'])) {
+    echo "Invalid color! Please enter red, yellow, or green.\n";
+    exit(1);
+}
+
+switch ($color) {
+    case 'red':
+        echo "STOP!\n";
+        break;
+    case 'yellow':
+        echo "Prepare to stop\n";
+        break;
+    case 'green':
+        echo "GO!\n";
+        break;
+}
+?>
