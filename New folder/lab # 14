@@ -1,0 +1,23 @@
+<?php
+echo "Menu:\n1 = Add\n2 = Edit\n3 = Delete\n";
+fwrite(STDOUT, "Select option (1-3): ");
+$input = trim(fgets(STDIN));
+$choice = is_numeric($input) ? (int) $input : null;
+
+if ($choice === null || $choice < 1 || $choice > 3) {
+    echo "Invalid selection! Please enter 1, 2, or 3.\n";
+    exit(1);
+}
+
+switch ($choice) {
+    case 1:
+        echo "Add action selected\n";
+        break;
+    case 2:
+        echo "Edit action selected\n";
+        break;
+    case 3:
+        echo "Delete action selected\n";
+        break;
+}
+?>
