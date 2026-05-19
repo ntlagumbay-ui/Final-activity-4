@@ -1,0 +1,16 @@
+<?php
+fwrite(STDOUT, "Enter a year: ");
+$input = trim(fgets(STDIN));
+$year = is_numeric($input) ? (int) $input : null;
+
+if ($year === null || $year < 0) {
+    echo "Please enter a valid positive year.\n";
+    exit(1);
+}
+
+if (($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0)) {
+    echo "$year is a Leap Year\n";
+} else {
+    echo "$year is not a Leap Year\n";
+}
+?>
