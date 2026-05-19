@@ -1,0 +1,28 @@
+<?php
+fwrite(STDOUT, "Enter grade (A, B, C, D, F): ");
+$input = trim(fgets(STDIN));
+$grade = strtoupper($input);
+
+if (!in_array($grade, ['A', 'B', 'C', 'D', 'F'])) {
+    echo "Invalid grade! Please enter A, B, C, D, or F.\n";
+    exit(1);
+}
+
+switch ($grade) {
+    case 'A':
+        echo "Excellent\n";
+        break;
+    case 'B':
+        echo "Good\n";
+        break;
+    case 'C':
+        echo "Average\n";
+        break;
+    case 'D':
+        echo "Below Average\n";
+        break;
+    case 'F':
+        echo "Failed\n";
+        break;
+}
+?>
